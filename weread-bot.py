@@ -4,7 +4,7 @@
 
 项目信息:
     名称: WeRead Bot
-    版本: 0.2.3
+    版本: 0.2.4
     作者: funnyzak
     仓库: https://github.com/funnyzak/weread-bot
     许可: MIT License
@@ -61,7 +61,7 @@ import schedule
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-VERSION = "0.2.3"
+VERSION = "0.2.4"
 REPO = "https://github.com/funnyzak/weread-bot"
 
 
@@ -351,7 +351,7 @@ class ReadingSession:
 
     def get_statistics_summary(self) -> str:
         """获取统计摘要"""
-        return f"""📊 微信读书挂机统计报告
+        return f"""📊 微信读书自动阅读统计报告
 👤 用户名称: {self.user_name}
 ⏰ 开始时间: {self.start_time.strftime('%Y-%m-%d %H:%M:%S')}
 ⏱️ 实际阅读: {self.actual_duration_formatted}
@@ -1350,7 +1350,7 @@ class NotificationService:
         url = "https://www.pushplus.plus/send"
         data = {
             "token": config["token"],
-            "title": "微信读书挂机报告",
+            "title": "微信读书自动阅读报告",
             "content": message
         }
 
@@ -1457,7 +1457,7 @@ class NotificationService:
 
             # 发送通知
             if apobj.notify(
-                title="微信读书挂机报告",
+                title="微信读书自动阅读报告",
                 body=message
             ):
                 logging.info("✅ Apprise通知发送成功")
@@ -1482,7 +1482,7 @@ class NotificationService:
 
         # 准备数据
         data = {
-            "title": "微信读书挂机报告",
+            "title": "微信读书自动阅读报告",
             "body": message
         }
 
@@ -1506,7 +1506,7 @@ class NotificationService:
             # 准备请求头
             headers = {
                 "Content-Type": "text/plain; charset=utf-8",
-                "Title": "微信读书挂机报告"
+                "Title": "微信读书自动阅读报告"
             }
 
             # 添加认证token（如果配置了）
