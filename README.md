@@ -1,6 +1,5 @@
 # WeRead Bot: 微信读书阅读机器人
 
-
 [![Auto Reading Bot](https://img.shields.io/github/actions/workflow/status/funnyzak/weread-bot/auto-reading.yml?style=flat-square&label=Auto%20Reading)](https://github.com/funnyzak/weread-bot/actions/workflows/auto-reading.yml)
 [![Docker Tags](https://img.shields.io/docker/v/funnyzak/weread-bot?sort=semver&style=flat-square&label=docker%20image)](https://hub.docker.com/r/funnyzak/weread-bot/)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/funnyzak/weread-bot?style=flat-square)](https://hub.docker.com/r/funnyzak/weread-bot/)
@@ -12,6 +11,7 @@ WeRead Bot 是一个易用的微信读书自动阅读机器人，通过模拟真
 💗 感谢 [findmover/wxread](https://github.com/findmover/wxread) 提供思路和部分代码支持。
 
 ## 🎯 核心功能
+
 - ⏰ **智能延迟**：支持启动随机延迟，有效防止固定启动时间特征识别
 - 📚 **灵活阅读**：支持时长区间配置（如 30-90 分钟随机），模拟真实阅读习惯
 - 👥 **多用户支持**：支持多个微信读书账号顺序执行，每用户可独立配置阅读策略
@@ -29,11 +29,12 @@ WeRead Bot 是一个易用的微信读书自动阅读机器人，通过模拟真
 
 ## 🚀 运行预览
 
-<img src=".github/assets/preview.png" alt="运行预览" style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)); border-radius: 8px;"/>
+<img src="https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/.github/assets/preview.png" alt="运行预览" style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2)); border-radius: 8px;"/>
 
 ## 📋 快速开始
 
 ### 方式一：直接运行（推荐）
+
 ```bash
 # 1. 下载文件
 wget https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/weread-bot.py
@@ -58,6 +59,7 @@ python weread-bot.py
 > 请将第 3 步中的 `curl_command.txt` 替换为实际保存CURL命令的文件路径。获取CURL命令详见[抓包配置详解](#🔧-抓包配置详解)
 
 ### 方式二：配置文件运行
+
 ```bash
 # 1. 下载配置模板
 wget https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/config.yaml.example
@@ -73,6 +75,7 @@ python weread-bot.py --config config.yaml
 ```
 
 ### 方式三：多用户运行
+
 ```bash
 # 1. 下载多用户配置模板
 wget https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/multiuser-example.yaml
@@ -89,15 +92,17 @@ python weread-bot.py --config multiuser-config.yaml
 ```
 
 ### 方式四：GitHub Actions 云端运行
+
 ```bash
 # 1. Fork 本项目到你的 GitHub 账户
 # 2. 在仓库 Settings → Secrets 中配置必要的环境变量
 # 3. 在 Actions 页面手动触发或设置定时运行
 ```
 
-> 📖 **详细配置指南**: [GitHub Actions 自动阅读配置指南](docs/github-action-guide.md)
+> 📖 **详细配置指南**: [GitHub Actions 自动阅读配置指南](https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/docs/github-action-guide.md)
 
 ### 方式五：不同运行模式
+
 ```bash
 # 立即执行（默认）
 python weread-bot.py
@@ -114,8 +119,7 @@ python weread-bot.py --verbose
 
 ## ⚙️ 配置说明
 
-配置项可通过环境变量或配置文件设置，优先级为：环境变量 > 配置文件 > 程序默认值。 配置文件模板见 [`config.yaml.example`](config.yaml.example)。
-
+配置项可通过环境变量或配置文件设置，优先级为：环境变量 > 配置文件 > 程序默认值。 配置文件模板见 [`config.yaml.example`](https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/config.yaml.example)。
 
 ### 必需配置
 
@@ -141,7 +145,7 @@ python weread-bot.py --verbose
 | CURL文件 | `curl_config.users[].file_path` | 用户专属的CURL文件路径 |
 | 个性化配置 | `curl_config.users[].reading_overrides` | 用户特定的阅读参数覆盖 |
 
-> 完整多用户配置示例见 [`config.yaml.example`](config.yaml.example) 中。
+> 完整多用户配置示例见 [`config.yaml.example`](https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/config.yaml.example) 中。
 
 ### 应用配置
 
@@ -151,6 +155,7 @@ python weread-bot.py --verbose
 | 启动延迟 | `STARTUP_DELAY` | `60-120` | 启动随机延迟（秒） |
 
 ### 阅读配置
+
 | 配置项 | 环境变量 | 默认值 | 说明 |
 |--------|----------|--------|------|
 | 阅读模式 | `READING_MODE` | `smart_random` | smart_random/sequential/pure_random |
@@ -160,6 +165,7 @@ python weread-bot.py --verbose
 | 章节连续性 | `CHAPTER_CONTINUITY` | `0.7` | 顺序阅读章节的概率（0-1） |
 
 ### 人类行为模拟配置
+
 | 配置项 | 环境变量 | 默认值 | 说明 |
 |--------|----------|--------|------|
 | 行为模拟 | `HUMAN_SIMULATION_ENABLED` | `true` | 是否启用人类行为模拟 |
@@ -169,6 +175,7 @@ python weread-bot.py --verbose
 | User-Agent轮换 | `ROTATE_USER_AGENT` | `true` | 是否轮换User-Agent |
 
 ### 网络配置
+
 | 配置项 | 环境变量 | 默认值 | 说明 |
 |--------|----------|--------|------|
 | 超时时间 | `NETWORK_TIMEOUT` | `30` | 网络请求超时（秒） |
@@ -177,6 +184,7 @@ python weread-bot.py --verbose
 | 频率限制 | `RATE_LIMIT` | `10` | 请求频率（次/分钟） |
 
 ### 通知配置
+
 | 配置项 | 环境变量 | 默认值 | 说明 |
 |--------|----------|--------|------|
 | 通知开关 | `NOTIFICATION_ENABLED` | `true` | 是否启用通知 |
@@ -247,9 +255,6 @@ python weread-bot.py --verbose
 | 守护进程开关 | `DAEMON_ENABLED` | `false` | 是否启用守护进程 |
 | 会话间隔 | `SESSION_INTERVAL` | `120-180` | 会话间隔时间（分钟） |
 | 每日最大会话数 | `MAX_DAILY_SESSIONS` | `12` | 每日最大执行次数 |
-
-
-> 完整配置示例见 [`config.yaml.example`](config.yaml.example)
 
 ## 🚀 运行模式详解
 
@@ -780,4 +785,3 @@ reading:
 ## 许可证
 
 MIT License
-
