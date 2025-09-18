@@ -8,7 +8,7 @@
 
 ### 步骤 1: Fork 项目
 
-1. 访问 [WeRead Bot 项目主页](https://github.com/your-username/weread-bot)
+1. 访问 [WeRead Bot 项目主页](https://github.com/funnyzak/weread-bot)
 2. 点击右上角的 **Fork** 按钮
 3. 选择你的 GitHub 账户，完成 Fork
 
