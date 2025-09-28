@@ -26,6 +26,7 @@ WeRead Bot 是一个易用的微信读书自动阅读机器人，通过模拟真
 - 🔄 **守护进程模式**：支持长期运行，自动管理会话间隔，每日会话数量可控
 - 🐳 **容器化部署**：提供 Docker 镜像，支持 Docker Compose 一键部署
 - ⚡ **云端自动化**：完美支持 GitHub Actions，实现免服务器自动阅读任务
+- 🎨 **配置生成器**：提供在线配置生成器，可视化界面生成配置文件，简化配置过程
 
 ## 运行预览
 
@@ -122,7 +123,7 @@ python weread-bot.py --mode daemon
 python weread-bot.py --verbose
 ```
 
-### Docker 方式运行
+### 方式六：Docker 方式运行
 
 使用一行命令单次运行：
 
@@ -143,6 +144,23 @@ docker run -d --name weread-bot \
 ## 配置说明
 
 配置项可通过环境变量或配置文件设置，优先级为：环境变量 > 配置文件 > 程序默认值。 配置文件模板见 [`config.yaml.example`](https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/config.yaml.example)。
+
+### 配置生成器（推荐新手）
+
+使用在线配置生成器，通过可视化界面生成配置文件：
+
+```bash
+# 访问在线配置生成器
+open https://weread.gh.yycc.dev/config-generator.html
+
+# 或本地运行配置生成器
+wget https://raw.githubusercontent.com/funnyzak/weread-bot/refs/heads/main/config-generator.html
+open config-generator.html
+```
+
+**在线访问地址：**
+- 🌐 **配置生成器**: https://weread.gh.yycc.dev/config-generator.html
+- 📖 **项目文档**: https://weread.gh.yycc.dev/
 
 ### 必需配置
 
