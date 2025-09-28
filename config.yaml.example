@@ -1,6 +1,7 @@
 # 微信读书阅读机器人配置文件
 # https://github.com/funnyzak/weread-bot
 # 配置优先级：环境变量 > config.yaml > 默认值
+# 你可以访问： https://weread.gh.yycc.dev/config-generator.html ，通过图形界面生成配置文件
 
 app:
   # 启动模式：immediate(立即执行), scheduled(定时执行), daemon(守护进程)

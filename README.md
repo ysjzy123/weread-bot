@@ -76,6 +76,7 @@ vim config.yaml
 # 4. 运行程序
 python weread-bot.py --config config.yaml
 ```
+> 你可以访问： https://weread.gh.yycc.dev/config-generator.html ，通过图形界面生成配置文件
 
 ### 方式三：多用户运行
 
