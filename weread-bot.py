@@ -4,7 +4,7 @@
 
 项目信息:
     名称: WeRead Bot
-    版本: 0.2.8
+    版本: 0.2.9
     作者: funnyzak
     仓库: https://github.com/funnyzak/weread-bot
     许可: MIT License
@@ -61,7 +61,7 @@ import schedule
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-VERSION = "0.2.8"
+VERSION = "0.2.9"
 REPO = "https://github.com/funnyzak/weread-bot"
 
 
@@ -2793,6 +2793,11 @@ class WeReadSessionManager:
             for cookie in response.headers.get('Set-Cookie', '').split(';'):
                 if "wr_skey" in cookie:
                     new_skey = cookie.split('=')[-1][:8]
+
+                    if not new_skey:
+                        logging.error(f"❌ Cookie刷新失败，新密钥为空")
+                        return False
+                    
                     self.cookies['wr_skey'] = new_skey
                     logging.info(f"✅ Cookie刷新成功，新密钥: {new_skey}")
                     return True
